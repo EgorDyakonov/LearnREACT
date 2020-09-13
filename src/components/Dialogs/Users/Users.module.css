@@ -1,0 +1,25 @@
+.users {
+    border-right: 2px solid black;
+}
+
+.user {
+    color: goldenrod;
+    padding: 10px;
+    margin: 10px;
+}
+
+.user a {
+    text-decoration: none;
+    border-radius: 3px;
+    padding: 10px;
+    color: gray;
+}
+
+.activeLink {
+    color: rgb(255, 255, 255);
+    background-color: rgba(138, 138, 138, 0.562);
+}
+
+.user a:hover {
+    color: rgb(179, 67, 67);
+}

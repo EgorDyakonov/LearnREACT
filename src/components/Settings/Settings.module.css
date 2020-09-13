@@ -1,0 +1,21 @@
+.quastion {
+    color: darkorange;
+    font-size: 3rem;
+}
+
+.btn {
+    color: ghostwhite;
+    font-size: 2rem;
+    padding: 20px;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.yes {
+    background-color: rgba(44, 209, 44, 0.63);
+}
+
+.no { 
+    background-color: rgba(255, 0, 0, 0.466);
+}

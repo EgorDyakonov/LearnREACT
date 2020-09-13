@@ -1,0 +1,16 @@
+.item {
+    color: rgb(55, 46, 95);
+    font-size: 2.5rem;
+}
+
+.input {
+    border-radius: 5px;
+    color: darkslategrey;
+}
+
+.btn {
+    border-radius: 5px;
+    background-color: rgb(228, 142, 142);
+    padding: 10px;
+    border: none;
+}

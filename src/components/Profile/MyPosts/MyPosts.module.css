@@ -1,0 +1,16 @@
+.parent {
+    /* margin-top: 10px; */
+}
+
+.postsBlock {
+    padding: 10px;
+}
+
+.btn {
+    padding: 10px;
+    color: #fff;
+    border: none;
+    background-color: rgba(74, 209, 175, 0.5);
+    font-size: 2rem;
+    margin-top: 20px;
+}

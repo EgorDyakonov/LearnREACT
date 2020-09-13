@@ -1,0 +1,16 @@
+.header {
+    grid-area: h;
+    background-color: #005dab;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.img {
+    width: 55px;
+    margin-left: 8px;
+}
+
+.img:hover {
+    width: 58px;
+}

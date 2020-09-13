@@ -1,0 +1,7 @@
+.pictEf:hover {
+    filter: blur(1px);
+}
+
+.frstPic {
+    max-width: 500px;
+}
