@@ -1,7 +1,17 @@
 const ADD_POST = 'ADD-POST';
 const NEW_TEXT_INPUT = 'NEW-TEXT-INPUT';
 
-const profileReducer = (state, action) => {
+let initialState = {
+    posttData: [
+        { id: 1, message: 'Hello how are you?', like: '15', name: 'Dmitry' },
+        { id: 2, message: 'I am fine, what about you??', like: '20', name: 'Yehor' },
+        { id: 3, message: 'Hiii guys', like: '9', name: 'Denis' },
+        { id: 4, message: 'Audi best car!!!!!', like: '99', name: 'Andrey' }
+    ],
+    postText: [{text: ''}]
+};
+
+const profileReducer = (state = initialState, action) => {
     switch(action.type) {
         case ADD_POST:
             let newPost = {
