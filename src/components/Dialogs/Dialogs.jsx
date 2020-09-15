@@ -1,7 +1,8 @@
 import React from 'react';
 import dia from './Dialogs.module.css';
 import HeaderDialogs from './Header/HeaderDialogs';
-import Messages from './Messages/Messages';
+// import Messages from './Messages/Messages';
+import MessagesContainer from './Messages/MessagesContainer';
 import Users from './Users/Users';
 
 const Dialogs = (props) => {
@@ -11,7 +12,7 @@ const Dialogs = (props) => {
             <HeaderDialogs />
             <div className={dia.items}>
                 <Users users={props.users} />
-                <Messages message={props.massage} store={props.store}/>
+                <MessagesContainer store={props.store}/>
             </div>
         </div>
     );

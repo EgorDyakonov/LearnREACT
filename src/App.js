@@ -22,9 +22,7 @@ const App = (props) => {
             users={props.state.dialogsPage.users}
             massage={props.state.dialogsPage.massage} 
             store={props.store} />} />
-          <Route path='/profile' render={() => <Profile posttData={props.state.profilePage.posttData} 
-                  dispatch={props.dispatch}
-                  postText={props.state.profilePage.postText}/>} />
+          <Route path='/profile' render={() => <Profile store={props.store}/>} />
           <Route path='/news' component={News} />
           <Route path='/music' component={Music} />
           <Route path='/settings' component={Settings} />

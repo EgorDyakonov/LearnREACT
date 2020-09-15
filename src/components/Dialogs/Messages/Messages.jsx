@@ -1,6 +1,5 @@
 import React from 'react';
 import mes from './Messages.module.css';
-import {updateNewMessageBodyCreator, sendMessageCreator} from './../../../redux/dialogsReducer'
 
 const Message = (props) => {
     if (props.send == 'me') {
@@ -18,23 +17,19 @@ const Messages = (props) => {
 
     let MassageItem = props.message.map(el => <Message send={el.send} id={el.id} text={el.text} />);
 
-    // let state = props.store.getState().dialogsPage;
-
-    let newMessageBody = props.newMessageBody;
     let onNewMessageChange = (e) => {
         let body = e.target.value;
-        props.store.dispatch(updateNewMessageBodyCreator(body));
+        props.onNewMessageChanges(body);
     }
     let onSendMessage = () => {
-
-        props.store.dispatch(sendMessageCreator());
+        props.onSendMessages();
     }
 
     return (
         <div className={mes.messages}>
             {MassageItem}
             <div className={mes.inputText}>
-                <input className={mes.inp} value={newMessageBody} onChange={onNewMessageChange} placeholder='write here...'></input>
+                <input className={mes.inp} onChange={onNewMessageChange} placeholder='write here...'></input>
                 <button onClick={onSendMessage} className={mes.btn} >SEND</button>
             </div>
         </div>
