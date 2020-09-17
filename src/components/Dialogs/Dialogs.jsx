@@ -1,7 +1,6 @@
 import React from 'react';
 import dia from './Dialogs.module.css';
 import HeaderDialogs from './Header/HeaderDialogs';
-// import Messages from './Messages/Messages';
 import MessagesContainer from './Messages/MessagesContainer';
 import UserItemContainer from './Users/UsersContainer';
 
