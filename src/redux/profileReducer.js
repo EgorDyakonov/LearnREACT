@@ -25,11 +25,13 @@ const profileReducer = (state = initialState, action) => {
             stateCopy.posttData = [...state.posttData];
             stateCopy.posttData.push(newPost);
             // state.postText[0].text = "";
+            stateCopy.postText = [...state.postText];
             stateCopy.postText[0].text = "";
             return stateCopy;
         }
         case NEW_TEXT_INPUT: {
             let stateCopy = {...state};
+            stateCopy.postText = [...state.postText];
             stateCopy.postText[0].text = action.symbol;
             return stateCopy;
         }
