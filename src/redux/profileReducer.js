@@ -8,36 +8,31 @@ let initialState = {
         { id: 3, message: 'Hiii guys', like: '9', name: 'Denis' },
         { id: 4, message: 'Audi best car!!!!!', like: '99', name: 'Andrey' }
     ],
-    postText: [{text: ''}]
+    postText: ''
 };
 
 const profileReducer = (state = initialState, action) => {
-    switch(action.type) {
-        case ADD_POST: {
+    switch (action.type) {
+        case ADD_POST:
             let newPost = {
                 id: 5,
-                message: state.postText[0].text,
+                message: state.postText,
                 like: 0,
                 name: 'Vihr\''
             };
-            let stateCopy = {...state};
-            // state.posttData.push(newPost);
-            stateCopy.posttData = [...state.posttData];
-            stateCopy.posttData.push(newPost);
-            // state.postText[0].text = "";
-            stateCopy.postText = [...state.postText];
-            stateCopy.postText[0].text = "";
-            return stateCopy;
-        }
-        case NEW_TEXT_INPUT: {
-            let stateCopy = {...state};
-            stateCopy.postText = [...state.postText];
-            stateCopy.postText[0].text = action.symbol;
-            return stateCopy;
-        }
-        default: 
+            return {
+                ...state,
+                posttData: [...state.posttData, newPost],
+                postText: ""
+            }
+        case NEW_TEXT_INPUT:
+            return {
+                ...state,
+                postText: action.symbol
+            }
+        default:
             return state;
-    }      
+    }
 }
 
 export const addPostActionCreator = () => {
@@ -46,7 +41,7 @@ export const addPostActionCreator = () => {
     }
 }
 export const newTextInputCreator = (text) => {
-    return {type: NEW_TEXT_INPUT, symbol: text}
+    return { type: NEW_TEXT_INPUT, symbol: text }
 }
 
 export default profileReducer;

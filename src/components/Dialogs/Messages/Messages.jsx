@@ -2,7 +2,7 @@ import React from 'react';
 import mes from './Messages.module.css';
 
 const Message = (props) => {
-    if (props.send == 'me') {
+    if (props.send === 'me') {
         return (
             <div id={props.id} className={mes.messageMe}>{props.text}</div>
         );
@@ -15,7 +15,7 @@ const Message = (props) => {
 
 const Messages = (props) => {
 
-    let MassageItem = props.message.map(el => <Message send={el.send} id={el.id} text={el.text} />);
+    let MassageItem = props.message.map(el => <Message send={el.send} key={el.id} id={el.id} text={el.text} />);
 
     let onNewMessageChange = (e) => {
         let body = e.target.value;

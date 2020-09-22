@@ -4,7 +4,7 @@ import Postt from './Post/Postt';
 
 const MyPosts = (props) => {
 
-    let postsElements = props.posttData.map((el) => <Postt message={el.message} like={el.like} name={el.name} />);
+    let postsElements = props.posttData.map((el) => <Postt message={el.message} key={el.id} like={el.like} name={el.name} />);
 
     let newPost = React.createRef();
 
@@ -22,7 +22,7 @@ const MyPosts = (props) => {
             <h3>My Posts</h3>
             <div>
                 <div>
-                    <input ref={newPost} onChange={onPostNewText} value={props.postText[0].text}></input>
+                    <input ref={newPost} onChange={onPostNewText} value={props.postText}></input>
                 </div>
                 <div>
                     <button className={MyP.btn} onClick={onAddPost}>Add post</button>
