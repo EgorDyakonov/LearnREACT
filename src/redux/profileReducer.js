@@ -8,7 +8,7 @@ let initialState = {
         { id: 3, message: 'Hiii guys', like: '9', name: 'Denis' },
         { id: 4, message: 'Audi best car!!!!!', like: '99', name: 'Andrey' }
     ],
-    postText: ''
+    postText: ""
 };
 
 const profileReducer = (state = initialState, action) => {

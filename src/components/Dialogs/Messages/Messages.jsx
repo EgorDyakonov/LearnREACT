@@ -29,7 +29,7 @@ const Messages = (props) => {
         <div className={mes.messages}>
             {MassageItem}
             <div className={mes.inputText}>
-                <input className={mes.inp} onChange={onNewMessageChange} placeholder='write here...'></input>
+                <input className={mes.inp} onChange={onNewMessageChange} value={props.messageBody} placeholder='write here...'></input>
                 <button onClick={onSendMessage} className={mes.btn} >SEND</button>
             </div>
         </div>

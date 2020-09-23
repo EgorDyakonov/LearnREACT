@@ -16,7 +16,7 @@ let initialState = {
         { send: 'no', id: 4, text: 'Same' },
         { send: 'me', id: 5, text: 'Ooh it\'s grate :3' }
     ],
-    newMessageBody: ''
+    newMessageBody: ""
 };
 
 export const dialogsReducer = (state = initialState, action) => {
@@ -31,7 +31,8 @@ export const dialogsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 newMessageBody: action.body,
-                massage: [...state.massage, { send: 'me', id: 6, text: body }]
+                massage: [...state.massage, { send: 'me', id: 6, text: body }],
+                newMessageBody: ""
             }
         default:
             return state;

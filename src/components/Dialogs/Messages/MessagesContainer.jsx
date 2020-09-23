@@ -5,7 +5,8 @@ import Messages from './Messages';
 
 let mapStateToProps = (state) => {
     return {
-        message: state.dialogsPage.massage
+        message: state.dialogsPage.massage,
+        messageBody: state.dialogsPage.newMessageBody
     }
 }
 
