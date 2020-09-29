@@ -23,11 +23,11 @@ let mapDispatchToProps = (dispatch) => {
     }
 }
 
-let UsersContainer = (props) => {
-    return(
-        <div>Users will be here</div>
-    );
-}
+// let UsersContainer = (props) => {
+//     return(
+//         <div>Users will be here</div>
+//     );
+// }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Users);
 // export default UsersContainer;
