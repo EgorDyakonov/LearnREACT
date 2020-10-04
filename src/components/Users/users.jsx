@@ -1,28 +1,22 @@
 import React from 'react';
 import styles from './users.module.css';
+import * as axios from "axios";
+import userPhoto from "./../../../src/assets/images/user.png";
 
 let Users = (props) => {
     if(props.users.length === 0) {
-        props.setUsers(
-            [
-                { photoUrl: "https://www.uokpl.rs/fpng/d/356-3566990_logo-png-50x50.png",
-                    followed: true, id: 1, status: "unasy man", fullName: "Dmitry", location: {country:"Belarus", city: "Minsk"} },
-                { photoUrl: "https://www.uokpl.rs/fpng/d/356-3566990_logo-png-50x50.png",
-                    followed: true, id: 2, status: "Pretty and cute", fullName: "Yehor", location: {country:"Russia", city: "Moscow"} },
-                { photoUrl: "https://www.uokpl.rs/fpng/d/356-3566990_logo-png-50x50.png",
-                    followed: false, id: 3, status: "crazy man xD", fullName: "Denis", location: {country:"Ukraine", city: "Kiev"} },
-                { photoUrl: "https://www.uokpl.rs/fpng/d/356-3566990_logo-png-50x50.png",
-                    followed: false, id: 4, status: "I am a boos", fullName: "Andrey", location: {country:"Ukraine", city: "Dnepro"} }
-            ]
-        )
+        axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
+            debugger;
+            props.setUsers(response.data.items);
+        });
     }
     return(
         <div>
             {   
-                props.users.map(el => <div key={el.id}>
+                props.users.map(el => <div key={el.id}>               
                     <span>
                         <div>
-                            <img alt="broke" className={styles.usersPhoto} src={el.photoUrl}></img>
+                            <img alt="broke" className={styles.usersPhoto} src={el.photos.small != null ? el.photos.small: userPhoto}></img>
                         </div>
                         <div>
                             { el.followed ? 
@@ -33,12 +27,12 @@ let Users = (props) => {
                     </span>
                     <span>
                         <span>
-                            <div>{el.fullName}</div>
+                            <div>{el.name}</div>
                             <div>{el.status}</div>
                         </span>
                         <span>
-                            <div>{el.location.country}</div>
-                            <div>{el.location.city}</div>
+                            <div>{"el.location.country"}</div>
+                            <div>{"el.location.city"}</div>
                         </span>
                     </span>
                 </div>)
