@@ -1,19 +1,13 @@
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS';
+const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 
 let initialState = {
-    users: 
-    [
-        // { photoUrl: "https://www.uokpl.rs/fpng/d/356-3566990_logo-png-50x50.png",
-        //     followed: true, id: 1, status: "unasy man", fullName: "Dmitry", location: {country:"Belarus", city: "Minsk"} },
-        // { photoUrl: "https://www.uokpl.rs/fpng/d/356-3566990_logo-png-50x50.png",
-        //     followed: true, id: 2, status: "Pretty and cute", fullName: "Yehor", location: {country:"Russia", city: "Moscow"} },
-        // { photoUrl: "https://www.uokpl.rs/fpng/d/356-3566990_logo-png-50x50.png",
-        //     followed: false, id: 3, status: "crazy man xD", fullName: "Denis", location: {country:"Ukraine", city: "Kiev"} },
-        // { photoUrl: "https://www.uokpl.rs/fpng/d/356-3566990_logo-png-50x50.png",
-        //     followed: false, id: 4, status: "I am a boos", fullName: "Andrey", location: {country:"Ukraine", city: "Dnepro"} }
-    ]
+    users: [],
+    pageSize: 5,
+    totalUsersCount: 19,
+    currentPage: 1
 };
 
 const usersReducer = (state = initialState, action) => {
@@ -41,7 +35,13 @@ const usersReducer = (state = initialState, action) => {
         case SET_USERS: {
             return {
                 ...state,
-                users: [...state.users, ...action.users]
+                users: action.users
+            }
+        }
+        case SET_CURRENT_PAGE: {
+            return {
+                ...state,
+                currentPage: action.currentPage
             }
         }
         default:
@@ -65,6 +65,12 @@ export const setUsersAC = (users) => {
     return ({
         type: SET_USERS,
         users
+    })
+}
+export const setCurrentPageAC = (pageNumber) => {
+    return ({
+        type: SET_CURRENT_PAGE,
+        pageNumber
     })
 }
 
