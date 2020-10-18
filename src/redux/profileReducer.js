@@ -34,7 +34,6 @@ const profileReducer = (state = initialState, action) => {
                 postText: action.symbol
             }
         case SET_USER_PROFILE:
-            debugger
             return { ...state, profile: action.profile }
         default:
             return state;
