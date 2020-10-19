@@ -2,8 +2,9 @@
     grid-area: h;
     background-color: #005dab;
     border-radius: 5px;
-    display: flex;
-    align-items: center;
+    /* display: flex;
+    align-items: center; */
+    /* grid-template-columns: 1fr 1fr; */
 }
 
 .img {
@@ -13,4 +14,13 @@
 
 .img:hover {
     width: 58px;
+}
+
+.loginBlock {
+    float: right;
+}
+
+.loginBlock a {
+    float: right;
+    padding: 16px;
 }
