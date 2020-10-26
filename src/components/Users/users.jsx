@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './users.module.css';
 import userPhoto from './../../../src/assets/images/user.png';
 import { NavLink } from 'react-router-dom';
+import * as axios from 'axios';
+import { userAPI } from '../../api/api';
         
 let Users = (props) => {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -33,8 +35,20 @@ let Users = (props) => {
                         </NavLink>
                         <div>
                             { el.followed ? 
-                                <button onClick={()=> {props.unfollow(el.id)}} >unfollow</button>: 
-                                <button onClick={()=> {props.follow(el.id)}}>follow</button>
+                                <button onClick={()=> {
+                                    userAPI.userUnfollow(el.id).then(response => {
+                                        if(response.resultCode === 0) {
+                                            props.unfollow(el.id);
+                                        }
+                                    });
+                                }} >unfollow</button>: 
+                                <button onClick={()=> {
+                                    userAPI.userFollow(el.id).then(response => {
+                                        if(response.resultCode === 0) {
+                                            props.follow(el.id);
+                                        }
+                                    });
+                                }}>follow</button>
                             }
                         </div>
                     </span>
